@@ -167,6 +167,23 @@ export default App;
 # 라우팅 구성
 ## 설정
 - src/index.js : BrowserRouter 컴포넌트 감싸기
+```javascript
+...
+
+import { BrowserRouter } from 'react-router-dom';
+
+...
+
+root.render(
+  <React.StrictMode>
+    <HelmetProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </HelmetProvider>
+  </React.StrictMode>,
+);
+```
 
 ## 메인페이지
 
@@ -175,10 +192,17 @@ export default App;
 - /member/login : 로그인
 
 ## 없는 페이지
-- * : 없는 페이지 - commons/pages/NotFound.js
+- `*` : 없는 페이지 - commons/pages/NotFound.js
 
 ## 에러페이지
 > class형 컴포넌트 - componentDidCatch 사용
 
 - commons/pages/error.js
 - commons/components/ErrorDisplay.js
+
+# 스타일링
+## 공통 스타일: src/index.css
+- 공통 폰트
+- 스타일 초기화
+- 기준 폰트 사이즈 : src/styles/fontSize.js / small, normal, medium, big, extraBig
+- 기준 컬러 : Primary, Secondary, Success, Danger, Warning, Info, Light, Dark
